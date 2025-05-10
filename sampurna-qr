@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Sampurna Computer Repair Services</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      padding: 40px;
+    }
+    .hidden {
+      display: none;
+    }
+    button {
+      padding: 15px 25px;
+      margin: 20px;
+      font-size: 16px;
+      border-radius: 8px;
+      border: none;
+      cursor: pointer;
+    }
+    #payBtn {
+      background-color: #4CAF50;
+      color: white;
+    }
+    #reviewBtn {
+      background-color: #fbbc05;
+      color: black;
+    }
+  </style>
+</head>
+<body>
+  <h1>Welcome to Sampurna Computer Repair Services</h1>
+  <p>Please make your payment below:</p>
+
+  <button id="payBtn">Make Payment via UPI</button>
+
+  <div id="reviewSection" class="hidden">
+    <p>Thank you! Now please leave us a Google review:</p>
+    <button id="reviewBtn">Leave a Review</button>
+  </div>
+
+  <script>
+    document.getElementById("payBtn").onclick = function () {
+      const upiLink = "upi://pay?pa=abcd@okhdfcbank&pn=Sampurna%20Computer%20Repair%20Services";
+      window.location.href = upiLink;
+
+      // Show review button after delay
+      setTimeout(() => {
+        document.getElementById("reviewSection").classList.remove("hidden");
+      }, 3000);
+    };
+
+    document.getElementById("reviewBtn").onclick = function () {
+      window.location.href = "https://g.page/r/CacCPrUi6OO8EAI/review";
+    };
+  </script>
+</body>
+</html>
